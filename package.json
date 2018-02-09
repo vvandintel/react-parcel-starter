@@ -1,0 +1,93 @@
+{
+  "name": "react-parcel-starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/vvandintel/react-parcel-starter.git",
+  "author": "Vincent Van Dintel <vincentvandintel@gmail.com>",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development parcel ./public/index.html --out-dir build ",
+    "build": "cross-env NODE_ENV=production parcel build ./public/index.html --out-dir build --no-minify --public-url /"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.3",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "material-ui-next": "^1.0.0-beta.32"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              ">1%",
+              "last 4 versions",
+              "Firefox ESR",
+              "not ie < 9"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "rules": {
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "ignore"
+        }
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "always"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ]
+    }
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
+        "flexbox": "no-2009"
+      }
+    }
+  }
+}
