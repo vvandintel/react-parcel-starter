@@ -1,10 +1,8 @@
 import React from 'react'
+import Main from '../Main/Main.jsx'
 
 const App = () => (
-  <div className='App'>
-    {/* <img className="App-Logo" src={logo} alt="React Logo" /> */}
-    <h1 className='App-Title'>React + Parcel</h1>
-  </div>
+  <Main />
 )
 
 export default App
