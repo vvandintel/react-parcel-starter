@@ -1,0 +1,7 @@
+---
+  applications:
+  - name: react-parcel-starter
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack/releases/download/v1.4.21/staticfile-buildpack-v1.4.21.zip
+    timeout: 60
+    routes:
+      - route: react-parcel-starter.vincentvandintel.com

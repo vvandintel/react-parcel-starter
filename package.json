@@ -3,23 +3,30 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "repository": "https://github.com/vvandintel/react-parcel-starter.git",
   "author": "Vincent Van Dintel <vincentvandintel@gmail.com>",
   "scripts": {
-    "start": "cross-env NODE_ENV=development parcel ./public/index.html --out-dir build ",
-    "build": "cross-env NODE_ENV=production parcel build ./public/index.html --out-dir build --public-url /"
+    "start": "cross-env NODE_ENV=development parcel ./public/index.html --out-dir build",
+    "build": "cross-env NODE_ENV=production parcel build ./public/index.html --out-dir build --public-url /",
+    "publish": "cross-env npm run build && cross-env cpy manifest.yml build && cross-env cf push -p build"
   },
   "dependencies": {
-    "material-ui": "^1.0.0-beta.32",
+    "material-ui": "^1.0.0-beta.33",
+    "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "cpy-cli": "^1.0.1",
     "cross-env": "^5.1.3",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",

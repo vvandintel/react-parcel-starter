@@ -1,8 +1,13 @@
-import React from 'react'
-import Main from '../Main/Main.jsx'
+import React, { Fragment } from 'react'
+// import './App.scss'
+import Main from '../Main/Main'
+import Header from '../Header/Header'
 
 const App = () => (
-  <Main />
+  <Fragment>
+    <Header />
+    <Main />
+  </Fragment>
 )
 
 export default App
