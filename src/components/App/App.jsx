@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+// import './App.scss'
+import Main from '../Main/Main'
+import Header from '../Header/Header'
 
 const App = () => (
-  <div className='App'>
-    {/* <img className="App-Logo" src={logo} alt="React Logo" /> */}
-    <h1 className='App-Title'>React + Parcel</h1>
-  </div>
+  <Fragment>
+    <Header />
+    <Main />
+  </Fragment>
 )
 
 export default App
