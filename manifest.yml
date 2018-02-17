@@ -1,7 +1,13 @@
 ---
   applications:
   - name: react-parcel-starter
-    buildpack: https://github.com/cloudfoundry/staticfile-buildpack/releases/download/v1.4.21/staticfile-buildpack-v1.4.21.zip
+    buildpack: https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.6.17/nodejs-buildpack-v1.6.17.zip
+    command: npm start
     timeout: 60
+    memory: 128MB
+    disk_quota: 256MB
+    env:
+      NODE_ENV: production
     routes:
       - route: react-parcel-starter.vincentvandintel.com
+      - route: react-parcel-starter.cfapps.io
