@@ -1,10 +1,8 @@
 import React from 'react'
+import Typography from 'material-ui/Typography'
 
 const About = () => (
-  <div className='About'>
-    {/* <img className="App-Logo" src={logo} alt="React Logo" /> */}
-    <h1 className='About-Title'>About</h1>
-  </div>
+  <Typography variant='display1'>About</Typography>
 )
 
 export default About

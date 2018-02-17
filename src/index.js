@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { createMuiTheme } from 'material-ui/styles'
-import { deepPurple, pink, red } from 'material-ui/colors'
-import { createBrowserHistory } from 'history'
+import { deepPurple, pink } from 'material-ui/colors'
 import './index.scss'
 // import injectTapEventPlugin from 'react-tap-event-plugin'
-import App from './components/App/App'
+import Routes from './components/Routes/Routes'
 
 const theme = createMuiTheme({
   palette: {
     primary: deepPurple,
-    accent: pink,
-    error: red,
-    type: 'dark',
+    secondary: pink,
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+    type: 'light',
   },
 })
 
@@ -22,8 +22,8 @@ const theme = createMuiTheme({
 
 ReactDOM.render((
   <MuiThemeProvider theme={theme}>
-    <BrowserRouter history={createBrowserHistory()}>
-      <App />
+    <BrowserRouter>
+      <Routes />
     </BrowserRouter>
   </MuiThemeProvider>
 ), document.getElementById('root'))

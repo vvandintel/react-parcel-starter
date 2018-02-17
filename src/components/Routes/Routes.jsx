@@ -1,20 +1,16 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import './Main.scss'
-import Home from '../Home/Home'
-import About from '../About/About'
+import MainApp from '../MainApp/MainApp'
 import NotFound from '../NotFound/NotFound'
 
-const Main = () => (
+const Routes = () => (
   <main className='main-container'>
     <Switch>
-      <Route path='/home' component={Home} />
-      <Route path='/about' component={About} />
+      <Route exact path='/' component={MainApp} />
       <Route path='/404' component={NotFound} />
-      <Redirect exact from='/' to='/home' />
       <Redirect from='*' to='/404' />
     </Switch>
   </main>
 )
 
-export default Main
+export default Routes
