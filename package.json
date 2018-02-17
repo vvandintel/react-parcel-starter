@@ -4,18 +4,24 @@
   "license": "MIT",
   "main": "index.js",
   "engines": {
-    "node": ">=8.9.4"
+    "node": "8.9.4"
   },
   "repository": "https://github.com/vvandintel/react-parcel-starter.git",
   "author": "Vincent Van Dintel <vincentvandintel@gmail.com>",
   "scripts": {
-    "start": "cross-env NODE_ENV=development parcel ./public/index.html --out-dir build",
-    "build": "cross-env NODE_ENV=production parcel build ./public/index.html --out-dir build --public-url /",
-    "publish": "cross-env npm run build && cross-env cpy manifest.yml build && cross-env cf push -p build"
+    "start:dev": "cross-env NODE_ENV=development parcel ./public/index.html --out-dir dev-build",
+    "start": "node server/index.js",
+    "build": "cross-env del-cli build -f && cross-env NODE_ENV=production parcel build ./public/index.html --out-dir build --public-url /",
+    "publish": "cross-env npm run build && cross-env cf push"
   },
   "dependencies": {
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "helmet": "^3.11.0",
+    "history": "^4.7.2",
     "material-ui": "^1.0.0-beta.33",
     "material-ui-icons": "^1.0.0-beta.17",
+    "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
@@ -28,6 +34,7 @@
     "babel-preset-react": "^6.24.1",
     "cpy-cli": "^1.0.1",
     "cross-env": "^5.1.3",
+    "del-cli": "^1.1.0",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-config-standard-react": "^5.0.0",
@@ -37,7 +44,8 @@
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.2.1",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.6.1"
   },
   "babel": {
     "presets": [
